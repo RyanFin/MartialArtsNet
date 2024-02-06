@@ -1,7 +1,12 @@
 .PHONY: run
 run:
-	dotnet watch run
+	dotnet run --launch-profile https
 
-.PHONE: new-app
+.PHONY: new-app
 new-app:
 	dotnet new webapi --use-controllers -o TodoApi
+
+# 
+.PHONY: trust-app
+trust-app:
+	dotnet dev-certs https --trust
