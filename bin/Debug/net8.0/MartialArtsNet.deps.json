@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "TodoApi/1.0.0": {
+      "MartialArtsNet/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": "8.0.1",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
-          "TodoApi.dll": {}
+          "MartialArtsNet.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore/8.0.1": {
@@ -138,7 +138,7 @@
     }
   },
   "libraries": {
-    "TodoApi/1.0.0": {
+    "MartialArtsNet/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

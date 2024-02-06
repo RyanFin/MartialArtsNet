@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi.csproj", "{45753542-B0D9-43ED-AC6D-C572D8692D2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartialArtsNet", "MartialArtsNet.csproj", "{8B094D83-57AA-42BB-86D7-18D2D632CFC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{45753542-B0D9-43ED-AC6D-C572D8692D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45753542-B0D9-43ED-AC6D-C572D8692D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45753542-B0D9-43ED-AC6D-C572D8692D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45753542-B0D9-43ED-AC6D-C572D8692D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B094D83-57AA-42BB-86D7-18D2D632CFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B094D83-57AA-42BB-86D7-18D2D632CFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B094D83-57AA-42BB-86D7-18D2D632CFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B094D83-57AA-42BB-86D7-18D2D632CFC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F63589EA-1E3A-4822-A370-29872DFEECA2}
+		SolutionGuid = {EF0D6F78-0C6E-4B75-93C2-0ACF5C730711}
 	EndGlobalSection
 EndGlobal

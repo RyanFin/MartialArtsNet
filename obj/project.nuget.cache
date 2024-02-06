@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QObBQ6D1+E+09Me1UoY4yxZi4oBC2mSNn5mxCo49yD8tyRDeppNh91WHMsqPCWbOP//EGqAZrjvCNPypXaxvug==",
+  "dgSpecHash": "VBjciU9u7uAxsmMxz1Wn0w249V/9L2xdSjkv6jfd8OwzsfWSIxhYopud6+oW44psMbn2T5za0FXFG6Ll8sU5/w==",
   "success": true,
-  "projectFilePath": "/Users/ryanfin/Documents/DotNetApps/TodoApi/TodoApi.csproj",
+  "projectFilePath": "/Users/ryanfin/Documents/DotNetApps/MartialArtsNet/MartialArtsNet.csproj",
   "expectedPackageFiles": [
     "/Users/ryanfin/.nuget/packages/microsoft.entityframeworkcore/8.0.1/microsoft.entityframeworkcore.8.0.1.nupkg.sha512",
     "/Users/ryanfin/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.1/microsoft.entityframeworkcore.abstractions.8.0.1.nupkg.sha512",

@@ -1,4 +1,4 @@
-namespace TodoApi;
+namespace MartialArtsNet;
 
 public class WeatherForecast
 {

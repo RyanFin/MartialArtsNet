@@ -4,7 +4,8 @@ run:
 
 .PHONY: new-app
 new-app:
-	dotnet new webapi --use-controllers -o TodoApi
+	dotnet new webapi --use-controllers -o MartialArtsNet
+	dotnet add package Microsoft.EntityFrameworkCore.InMemory
 
 # 
 .PHONY: trust-app

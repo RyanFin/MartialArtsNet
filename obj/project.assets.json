@@ -1010,11 +1010,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ryanfin/Documents/DotNetApps/TodoApi/TodoApi.csproj",
-      "projectName": "TodoApi",
-      "projectPath": "/Users/ryanfin/Documents/DotNetApps/TodoApi/TodoApi.csproj",
+      "projectUniqueName": "/Users/ryanfin/Documents/DotNetApps/MartialArtsNet/MartialArtsNet.csproj",
+      "projectName": "MartialArtsNet",
+      "projectPath": "/Users/ryanfin/Documents/DotNetApps/MartialArtsNet/MartialArtsNet.csproj",
       "packagesPath": "/Users/ryanfin/.nuget/packages/",
-      "outputPath": "/Users/ryanfin/Documents/DotNetApps/TodoApi/obj/",
+      "outputPath": "/Users/ryanfin/Documents/DotNetApps/MartialArtsNet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ryanfin/.nuget/NuGet/NuGet.Config"

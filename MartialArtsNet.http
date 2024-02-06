@@ -1,0 +1,6 @@
+@MartialArtsNet_HostAddress = http://localhost:5207
+
+GET {{MartialArtsNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
