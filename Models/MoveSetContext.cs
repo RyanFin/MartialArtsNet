@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MartialArtsNet.Models;
 
 namespace MartialArtsNet.Models;
 
@@ -9,4 +10,6 @@ public class MoveSetContext : DbContext{
     }
 
     public DbSet<MoveSet> MoveSets {get; set;} = null!;
+
+public DbSet<MartialArtsNet.Models.MoveSetDTO> MoveSetDTO { get; set; } = default!;
 }

@@ -25,4 +25,7 @@ controller-gen:
 
 # Build Project with the required controller
 # This code will generate all the CRUD operations required for the API 
-# dotnet aspnet-codegenerator controller -name MoveSetController -async -api -m MoveSet -dc MoveSetContext -outDir Controllers
+# Use the Data Transfer Object (DTO) approach to obfuscate info that shouldn't be passed to the API (e.g. secret_key)
+.PHONY: update-controller
+update-controller:
+	dotnet aspnet-codegenerator controller -name MoveSetController -async -api -m MoveSetDTO -dc MoveSetContext -outDir Controllers

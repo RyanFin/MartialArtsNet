@@ -22,36 +22,36 @@ namespace MartialArtsNet.Controllers
 
         // GET: api/MoveSet
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MoveSet>>> GetMoveSets()
+        public async Task<ActionResult<IEnumerable<MoveSetDTO>>> GetMoveSetDTO()
         {
-            return await _context.MoveSets.ToListAsync();
+            return await _context.MoveSetDTO.ToListAsync();
         }
 
         // GET: api/MoveSet/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<MoveSet>> GetMoveSet(long id)
+        public async Task<ActionResult<MoveSetDTO>> GetMoveSetDTO(long id)
         {
-            var moveSet = await _context.MoveSets.FindAsync(id);
+            var moveSetDTO = await _context.MoveSetDTO.FindAsync(id);
 
-            if (moveSet == null)
+            if (moveSetDTO == null)
             {
                 return NotFound();
             }
 
-            return moveSet;
+            return moveSetDTO;
         }
 
         // PUT: api/MoveSet/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMoveSet(long id, MoveSet moveSet)
+        public async Task<IActionResult> PutMoveSetDTO(long id, MoveSetDTO moveSetDTO)
         {
-            if (id != moveSet.Id)
+            if (id != moveSetDTO.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(moveSet).State = EntityState.Modified;
+            _context.Entry(moveSetDTO).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace MartialArtsNet.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MoveSetExists(id))
+                if (!MoveSetDTOExists(id))
                 {
                     return NotFound();
                 }
@@ -75,34 +75,33 @@ namespace MartialArtsNet.Controllers
         // POST: api/MoveSet
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<MoveSet>> PostMoveSet(MoveSet moveSet)
+        public async Task<ActionResult<MoveSetDTO>> PostMoveSetDTO(MoveSetDTO moveSetDTO)
         {
-            _context.MoveSets.Add(moveSet);
+            _context.MoveSetDTO.Add(moveSetDTO);
             await _context.SaveChangesAsync();
 
-            Console.WriteLine("nameof output: " + nameof(GetMoveSet));
-            return CreatedAtAction(nameof(GetMoveSet), new { id = moveSet.Id }, moveSet);
+            return CreatedAtAction("GetMoveSetDTO", new { id = moveSetDTO.Id }, moveSetDTO);
         }
 
         // DELETE: api/MoveSet/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMoveSet(long id)
+        public async Task<IActionResult> DeleteMoveSetDTO(long id)
         {
-            var moveSet = await _context.MoveSets.FindAsync(id);
-            if (moveSet == null)
+            var moveSetDTO = await _context.MoveSetDTO.FindAsync(id);
+            if (moveSetDTO == null)
             {
                 return NotFound();
             }
 
-            _context.MoveSets.Remove(moveSet);
+            _context.MoveSetDTO.Remove(moveSetDTO);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MoveSetExists(long id)
+        private bool MoveSetDTOExists(long id)
         {
-            return _context.MoveSets.Any(e => e.Id == id);
+            return _context.MoveSetDTO.Any(e => e.Id == id);
         }
     }
 }
