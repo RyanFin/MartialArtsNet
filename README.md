@@ -1,7 +1,8 @@
 # MartialArtsNet
 - Learning how to program a web application using .NET
 - Microsoft Tutorial: https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022
-- https://localhost:7276/swagger/index.html
+- Load Swagger app: https://localhost:7276/swagger/index.html
+- FrontEnd development: https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-8.0 
 
 # Design Architecture 
 ![MVC Pattern used in this .NET app](image.png)
