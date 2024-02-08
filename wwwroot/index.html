@@ -3,43 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>MartialArtsNet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <h1>MartialArtsNet Add Moveset</h1>
-    <h3>Add Move</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="Enter a new move...">
-        <input type="text" id="add-belt-required" placeholder="Enter belt required...">
-        <input type="submit" value="Add">
-    </form>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/img/Yin_yang.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            MartialArtsNet
+        </a>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <h3>Add Move</h3>
+        </div>
+        <div class="container">
 
-    <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateItem()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-name">
-            <input type="text" id="edit-beltRequired">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
+            <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Enter a new move...</span>
+                    </div>
+                    <input type="text" class="form-control" id="add-name" aria-describedby="basic-addon3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Enter belt required...</span>
+                    </div>
+                    <input type="text" class="form-control" id="add-belt-required" aria-describedby="basic-addon3">
+                    <button type="submit" class="btn btn-dark">Add</button>
+                </div>
+            </form>
+
+            <div id="editForm">
+                <h3>Edit</h3>
+                <form action="javascript:void(0);" onsubmit="updateItem()">
+                    <input type="hidden" id="edit-id">
+                    <input type="text" id="edit-name">
+                    <input type="text" id="edit-beltRequired">
+                    <button type="submit" class="btn btn-dark">Save</button>
+                    <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+                </form>
+            </div>
+
+    
+            <h4><span class="badge badge-secondary" id="counter"></span></h4>
+        
+            <table class="table table-striped table-active">
+                <tr>
+                    <th class="table-dark">Name</th>
+                    <th class="table-dark">Belt Required</th>
+                    <th class="table-dark"></th>
+                    <th class="table-dark"></th>
+                </tr>
+                <tbody id="todos"></tbody>
+            </table>
+        </div>
     </div>
-
-    <p id="counter"></p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Belt Required</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tbody id="todos"></tbody>
-    </table>
 
     <script src="js/site.js" asp-append-version="true"></script>
     <script type="text/javascript">
         getItems();
     </script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ input[type='submit'], button, [aria-label] {
     display: none;
 }
 
-table {
+/* table {
     font-family: Arial, sans-serif;
     border: 1px solid;
     border-collapse: collapse;
@@ -20,4 +20,4 @@ th {
 td {
     border: 1px solid;
     padding: 5px;
-}
+} */
