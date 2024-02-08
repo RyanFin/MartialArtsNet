@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MartialArtsNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72baf65b89ee6d7d591949c0e5a35ea8afdab987")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bf3f8dde222ed3663fbf1b01f3a6ab028fd925a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MartialArtsNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MartialArtsNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

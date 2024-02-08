@@ -31,5 +31,8 @@ The promise2 will execute not only `doSomething()` but also the `successCallback
 
 ## Challenges and Solutions
 1. Set CORS header so that the application frontend can access the API code [X]. Solution: Set `'Access-Control-Allow-Origin':'*'` in `site.js` header for the POST and PUT requests.
-2. Add a dropdown menu for belt required fron end so that the user does not have to keep typing in the belt manually []. Solution:
-3. Alter JS code so that all instances of the `beltRequired` field refers to a text box and not a checkbox(boolean)[X]
+2. Add a dropdown menu for belt required fron end so that the user does not have to keep typing in the belt manually []. 
+Research: https://stackoverflow.com/questions/16407797/how-to-make-input-appending-drop-down-list-in-bootstrap
+Solution:
+3. Alter JS code so that all instances of the `beltRequired` field refers to a text box and not a checkbox(boolean)[X] Solution: Altered `beltRequired` field to use text box. I copied the existing text box example from the existing `name` field.
+4. Find out how to change the generated 'Edit' and 'Delete' buttons to Bootstrap buttons using Javascript to do it []. Solution:
