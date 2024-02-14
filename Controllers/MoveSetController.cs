@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MartialArtsNet.Models;
+using MartialArtsNet.Services;
 
 namespace MartialArtsNet.Controllers
 {
@@ -14,92 +15,69 @@ namespace MartialArtsNet.Controllers
     public class MoveSetController : ControllerBase
     {
         private readonly MoveSetContext _context;
+        private readonly MovesService _movesService;
 
-        public MoveSetController(MoveSetContext context)
+        public MoveSetController(MoveSetContext context, MovesService movesService)
         {
             _context = context;
+            _movesService = movesService;
         }
 
         // GET: api/MoveSet
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<MoveSetDTO>> GetMoveSetDTO()
+        // {
+        //     // return await _context.MoveSetDTO.ToListAsync();
+        //     return await _movesService.GetAsync();
+        // }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MoveSetDTO>>> GetMoveSetDTO()
-        {
-            return await _context.MoveSetDTO.ToListAsync();
+        public async Task<List<MoveSetDTO>> GetMoveSetDTO(){
+            return await _movesService.GetAsync();
         }
+
 
         // GET: api/MoveSet/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<MoveSetDTO>> GetMoveSetDTO(long id)
+        public async Task<ActionResult<MoveSetDTO>> GetMoveSetDTO(string id)
         {
-            var moveSetDTO = await _context.MoveSetDTO.FindAsync(id);
+            // var moveSetDTO = await _context.MoveSetDTO.FindAsync(id);
+            var moveSetDTO = await _movesService.GetAsync(id);
 
             if (moveSetDTO == null)
-            {
+{
                 return NotFound();
             }
 
             return moveSetDTO;
         }
 
-        // PUT: api/MoveSet/5
+        // PUT: api/MoveSet/507f1f77bcf86cd799439011
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMoveSetDTO(long id, MoveSetDTO moveSetDTO)
-        {
-            if (id != moveSetDTO.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(moveSetDTO).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MoveSetDTOExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+        public async Task<IActionResult> PutMoveSetDTO(string id, MoveSetDTO updatedMoveSetDTO){
+            await _movesService.UpdateAsync(id, updatedMoveSetDTO);
             return NoContent();
         }
 
         // POST: api/MoveSet
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<MoveSetDTO>> PostMoveSetDTO(MoveSetDTO moveSetDTO)
+        public async Task<ActionResult<MoveSetDTO>> PostMoveSetDTO(MoveSetDTO newMoveSetDTO)
         {
-            _context.MoveSetDTO.Add(moveSetDTO);
-            await _context.SaveChangesAsync();
+            await _movesService.CreateAsync(newMoveSetDTO);
 
-            return CreatedAtAction("GetMoveSetDTO", new { id = moveSetDTO.Id }, moveSetDTO);
+            return CreatedAtAction(nameof(GetMoveSetDTO), new { id = newMoveSetDTO.Id }, newMoveSetDTO);
         }
 
         // DELETE: api/MoveSet/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMoveSetDTO(long id)
+        public async Task<IActionResult> DeleteMoveSetDTO(string id)
         {
-            var moveSetDTO = await _context.MoveSetDTO.FindAsync(id);
-            if (moveSetDTO == null)
-            {
-                return NotFound();
-            }
-
-            _context.MoveSetDTO.Remove(moveSetDTO);
-            await _context.SaveChangesAsync();
-
+            await _movesService.RemoveAsync(id);
             return NoContent();
         }
 
-        private bool MoveSetDTOExists(long id)
+        private bool MoveSetDTOExists(string id)
         {
             return _context.MoveSetDTO.Any(e => e.Id == id);
         }
