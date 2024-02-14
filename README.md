@@ -1,8 +1,9 @@
 # MartialArtsNet
-- Learning how to program a web application using .NET
+- Learning how to program a Controller-based web API  in ASP.NET Core 8.0
 - Microsoft Tutorial: https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022
 - Load Swagger app: https://localhost:7276/swagger/index.html
 - FrontEnd development: https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-8.0 
+- MongoDB database development: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-8.0&tabs=visual-studio-code
 
 # Design Architecture 
 ![MVC Pattern used in this .NET app](image.png)
@@ -36,3 +37,6 @@ Research: https://stackoverflow.com/questions/16407797/how-to-make-input-appendi
 Solution:
 3. Alter JS code so that all instances of the `beltRequired` field refers to a text box and not a checkbox(boolean)[X] Solution: Altered `beltRequired` field to use text box. I copied the existing text box example from the existing `name` field.
 4. Find out how to change the generated 'Edit' and 'Delete' buttons to Bootstrap buttons using Javascript to do it []. Solution:
+5. Move and migrate the 'add move' functionality to a separate *admin* page in the nav bar. Keep the table of moves on the front page []. Solution:
+6. For each belt that is selected, add a png image of that belt as a new column in the table [] Solution:
+7. Use MongoDB Atlas to connect to store data in MongoDB NoSQL db in the cloud. https://cloud.mongodb.com/v2/65c4e9a46b1e9c7bf4d60e68#/overview [] 

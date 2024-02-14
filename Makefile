@@ -29,3 +29,8 @@ controller-gen:
 .PHONY: update-controller
 update-controller:
 	dotnet aspnet-codegenerator controller -name MoveSetController -async -api -m MoveSetDTO -dc MoveSetContext -outDir Controllers
+
+
+.PHONY: inst-packages
+inst-packages:
+	dotnet list package

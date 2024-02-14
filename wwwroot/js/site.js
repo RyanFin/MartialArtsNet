@@ -11,8 +11,11 @@ function getItems() {
 function addItem() {
   const addNameTextbox = document.getElementById('add-name');
   const addBeltRequiredTextbox = document.getElementById('add-belt-required');
+  const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
 
   const item = {
+    id : genRanHex(24),
     beltRequired: addBeltRequiredTextbox.value.trim(),
     name: addNameTextbox.value.trim()
   };
@@ -55,7 +58,8 @@ function displayEditForm(id) {
 function updateItem() {
   const itemId = document.getElementById('edit-id').value;
   const item = {
-    id: parseInt(itemId, 10),
+    // id: parseInt(itemId, 10),
+    id: itemId,
     // beltRequired: document.getElementById('edit-beltRequired').checked,
     beltRequired: document.getElementById('edit-beltRequired').value.trim(),
     name: document.getElementById('edit-name').value.trim()
@@ -104,11 +108,11 @@ function _displayItems(data) {
 
     let editButton = button.cloneNode(false);
     editButton.innerText = 'Edit';
-    editButton.setAttribute('onclick', `displayEditForm(${item.id})`);
+    editButton.setAttribute('onclick', `displayEditForm("${item.id}")`);
 
     let deleteButton = button.cloneNode(false);
     deleteButton.innerText = 'Delete';
-    deleteButton.setAttribute('onclick', `deleteItem(${item.id})`);
+    deleteButton.setAttribute('onclick', `deleteItem("${item.id}")`);
 
     let tr = tBody.insertRow();
     
